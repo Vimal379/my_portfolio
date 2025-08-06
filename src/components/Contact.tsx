@@ -39,7 +39,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
       label: 'GitHub',
       value: 'View my work',
       link: 'https://github.com/vimal379',
-      color: 'text-gray-700'
+      color: 'text-blue-700'
     }
   ];
 

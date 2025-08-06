@@ -8,6 +8,13 @@ interface CertificationsProps {
 const Certifications: React.FC<CertificationsProps> = ({ darkMode }) => {
   const certifications = [
     {
+      title: 'Back End Development and APIs',
+      issuer: 'freeCodeCamp',
+      date: 'July 2025',
+      link: 'https://www.freecodecamp.org/certification/fcc29d40260-398e-4265-b7b8-54296cdda4c5/back-end-development-and-apis',
+      featured: true
+    },
+    {
       title: 'SQL (Basic) Certificate',
       issuer: 'HackerRank',
       date: 'July 2025',
@@ -184,9 +191,9 @@ const Certifications: React.FC<CertificationsProps> = ({ darkMode }) => {
         {/* Bottom Stats */}
         <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {[
-            { number: "6", label: "Certifications", suffix: "" },
+            { number: certifications.length, label: "Certifications", suffix: "" },
             { number: "4", label: "Platforms", suffix: "" },
-            { number: "2024", label: "Latest Cert", suffix: "" },
+            { number: "2025", label: "Latest Cert", suffix: "" },
             { number: "100", label: "Verified", suffix: "%" }
           ].map((stat, index) => (
             <div key={index} className="text-center group">

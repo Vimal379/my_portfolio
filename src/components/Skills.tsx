@@ -143,8 +143,6 @@ const Skills: React.FC<SkillsProps> = ({ darkMode, scrollY }) => {
         <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {[
             { number: "12+", label: "Technologies" },
-            { number: "50+", label: "Projects" },
-            { number: "3+", label: "Years Experience" },
             { number: "100%", label: "Dedication" }
           ].map((stat, index) => (
             <div key={index} className="text-center group">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Github, ExternalLink, ArrowRight } from 'lucide-react';
-
+import expense from '../assests/expense.png';
+import nutri from '../assests/nutri.png'
 interface ProjectsProps {
   darkMode: boolean;
 }
@@ -12,13 +13,31 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       techStack: 'Node.js, Express, MongoDB, EJS',
       description: 'A Shopping website with functionality where users can add products to favorites and admin can add new products.',
       github: 'https://github.com/Vimal379/scatch',
+      featured: false
+    },
+    {
+      title: 'AI Nutritionist Assistant',
+      techStack: 'Python, Streamlit, Gemini API',
+      description: 'A Streamlit-based web app that generates personalized 7-day diet plans using Gemini AI, based on user health data and goals.',
+      appImage: nutri,
+      github: 'https://github.com/Vimal379/AI-Nutritionist-Assistant',
+      featured: true
+    },
+    {
+      title: 'AI Fact Analyser & Career Recommendation',
+      techStack: 'Python, Streamlit, Gemini API',
+      description: 'A Streamlit-based web app that generates personalized career roadmap and also check the fact are valid or not.',
+      appImage: "",
+      github: 'https://github.com/https://github.com/Vimal379/Fact-Analyser-and-Career-Recommendation.git/AI-Nutritionist-Assistant',
       featured: true
     },
     {
       title: 'Expense Tracker',
       techStack: 'React JS, Tailwind CSS, Local Storage, Chart.js',
       description: 'It allows users to add, view, and manage their income and expenses in real-time.',
+      appImage: expense,
       github: 'https://github.com/Vimal379/React-Expense-Tracker',
+      appLink:'https://react-expense-tracker-amber.vercel.app',
       featured: true
     },
     {
@@ -52,8 +71,6 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
         <div className="mb-20">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-6xl lg:text-8xl font-black text-gray-900 leading-none">
-              SELECTED
-              <br />
               <span className="text-orange-500">PROJECTS</span>
             </h2>
             <div className="hidden lg:block">
@@ -84,8 +101,13 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                     <div className="text-6xl font-black text-gray-600 opacity-50">
                       {project.title.charAt(0)}
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {project.appImage && (
+                        <img src={project.appImage} className="bg-cover h-full w-full bg-center " alt="" />
+                      )}
+                    </div>
                     <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                      
                       <div className="flex space-x-3">
                         <a
                           href={project.github}
@@ -96,7 +118,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                           <Github size={20} className="text-gray-900" />
                         </a>
                         <button className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                          <ExternalLink size={20} className="text-white" />
+                          <ExternalLink  size={20} className="text-white" />
                         </button>
                       </div>
                     </div>
@@ -145,10 +167,12 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                     <Github size={18} />
                     <span className="font-medium">View Code</span>
                   </a>
+                  <a href={project.appLink} target='_blank'>
                   <button className="group flex items-center space-x-2 border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300">
-                    <span className="font-medium">Live Demo</span>
+                    <span className="font-medium">Live Demo </span>
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </button>
+                  </a>
                 </div>
               </div>
             </div>
